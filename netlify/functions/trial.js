@@ -4,11 +4,10 @@ exports.handler = async (event) => {
     }
     const { employeeCount } = JSON.parse(event.body);
     try {
-        // Note: Netlify Functions don't have persistent file storage.
-        // For now, simulate saving for testing.
         console.log('Received:', { employeeCount });
         return {
             statusCode: 200,
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message: 'Lead saved! Thank you.' })
         };
     } catch (error) {

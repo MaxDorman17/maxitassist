@@ -3,227 +3,580 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Max It Assist: Tech and automation virtual assistants for small businesses. Email setup, CRM integration, AI tools, and more.">
-    <meta name="keywords" content="tech virtual assistant, small business automation, email setup, CRM integration, AI tools, Max It Assist">
-    <meta name="author" content="Max It Assist">
-    <title>Max It Assist - Tech & Automation Solutions</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta name="description" content="MaxAssist offers 24/7 telephone answering and AI-powered customer conversation services for businesses.">
+    <meta name="keywords" content="telephone answering, AI voice agent, outsourced switchboard, customer support">
+    <title>MaxAssist - The World's Customer Conversation Experts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        :root {
+            --navy: #001f3f;
+            --light-gray: #f8f9fa;
+            --green: #28a745;
+            --white: #ffffff;
+            --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            --gradient: linear-gradient(135deg, #001f3f, #005f73);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--white);
+            color: #333333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--navy);
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover, nav ul li a:focus {
+            color: var(--green);
+            outline: none;
+        }
+
+        .cta-button {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cta-button:hover, .cta-button:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            outline: none;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: var(--navy);
+        }
+
+        section {
+            padding: 80px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #hero {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            text-align: center;
+            padding-top: 140px;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #hero h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        #hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-form {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .hero-form select, .hero-form button {
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .hero-form button {
+            background: var(--gradient);
+            color: var(--white);
+            border: none;
+            cursor: pointer;
+            flex: 1;
+            transition: transform 0.2s ease;
+        }
+
+        .hero-form button:hover, .hero-form button:focus {
+            transform: translateY(-2px);
+            outline: none;
+        }
+
+        .service-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: var(--light-gray);
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .card i {
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            color: var(--navy);
+            margin-bottom: 15px;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .card ul li {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .capabilities {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+
+        .capabilities li {
+            font-size: 16px;
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .capabilities li::before {
+            content: '✔';
+            color: var(--green);
+            position: absolute;
+            left: 0;
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            margin: 40px 0;
+        }
+
+        .carousel-slide {
+            display: none;
+            text-align: center;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        .carousel-slide img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-controls button {
+            background: rgba(0, 0, 0, 0.5);
+            color: var(--white);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 50%;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 32px;
+            color: var(--green);
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: var(--light-gray);
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        footer a {
+            color: var(--navy);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+        }
+
+        footer a:hover, footer a:focus {
+            color: var(--green);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                gap: 20px;
+                background-color: var(--white);
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                padding: 20px;
+                box-shadow: var(--shadow);
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            #hero h1 {
+                font-size: 32px;
+            }
+
+            #hero p {
+                font-size: 16px;
+            }
+
+            .hero-form {
+                flex-direction: column;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="logo">
-                <img src="logo-circle.png" alt="Max It Assist Logo" class="logo-img">
-                <span class="logo-text">Max It Assist</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
+
+    <header>
+        <div class="logo">MaxAssist</div>
+        <nav>
+            <ul>
+                <li><a href="#hero">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-        </div>
-    </nav>
+        </nav>
+        <a href="#trial" class="cta-button">Try Free</a>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    </header>
 
-    <!-- Home Section -->
-    <section id="home">
-        <div class="hero-overlay">
-            <div class="container">
-                <h1>Empowering Your Business with Intelligent Automation</h1>
-                <p>Streamline operations, boost efficiency, and focus on growth with our expert virtual assistance.</p>
-                <a href="#contact" class="cta-button">Get Started <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="hero-video.mp4" type="video/mp4">
-            <img src="hero-bg.jpg" alt="Hero Background" class="hero-fallback">
-        </video>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <p class="section-intro">Tailored solutions to automate and optimize your business processes.</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fas fa-envelope fa-3x"></i>
-                    <h3>Email Setup</h3>
-                    <p>Professional email configuration with Gmail or Mailchimp for seamless communication.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-database fa-3x"></i>
-                    <h3>CRM Integration</h3>
-                    <p>Implement and customize HubSpot or Zoho to manage customer relationships effectively.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-robot fa-3x"></i>
-                    <h3>AI Tools</h3>
-                    <p>Deploy AI chatbots and intelligent assistants to automate customer interactions.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fas fa-cogs fa-3x"></i>
-                    <h3>Workflow Automation</h3>
-                    <p>Connect apps with Zapier to create efficient, time-saving workflows.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section id="pricing">
-        <div class="container">
-            <h2>Pricing Plans</h2>
-            <p class="section-intro">Flexible packages to suit your business needs and budget.</p>
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <h3>Starter</h3>
-                    <p class="price">$500</p>
-                    <p class="duration">10 hours</p>
-                    <ul>
-                        <li>Basic email setup</li>
-                        <li>CRM introduction</li>
-                        <li>Initial consultation</li>
-                    </ul>
-                    <a href="#contact" class="cta-button">Choose Plan</a>
-                </div>
-                <div class="pricing-card featured">
-                    <h3>Pro</h3>
-                    <p class="price">$1,200</p>
-                    <p class="duration">25 hours</p>
-                    <ul>
-                        <li>Full CRM integration</li>
-                        <li>AI tool deployment</li>
-                        <li>Workflow automation</li>
-                        <li>Priority support</li>
-                    </ul>
-                    <a href="#contact" class="cta-button">Choose Plan</a>
-                </div>
-                <div class="pricing-card">
-                    <h3>Custom</h3>
-                    <p class="price">Contact Us</p>
-                    <p class="duration">Tailored</p>
-                    <ul>
-                        <li>Personalized solutions</li>
-                        <li>Scalable hours</li>
-                        <li>Dedicated consultant</li>
-                    </ul>
-                    <a href="#contact" class="cta-button">Get Quote</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials">
-        <div class="container">
-            <h2>What Our Clients Say</h2>
-            <p class="section-intro">Hear from businesses we've helped thrive.</p>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <p>"Max It Assist transformed our workflow. We're saving hours every week!"</p>
-                    <div class="author">- Sarah K., CEO of TechStart Inc.</div>
-                </div>
-                <div class="testimonial-card">
-                    <p>"Professional service and expert integration. Highly recommended for small businesses."</p>
-                    <div class="author">- Mike L., Founder of Innovate Solutions</div>
-                </div>
-                <div class="testimonial-card">
-                    <p>"The AI tools they set up have revolutionized our customer support."</p>
-                    <div class="author">- Emily R., Operations Manager at GrowthHub</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About Max It Assist</h2>
-            <p class="section-intro">We are dedicated to providing top-tier virtual assistance in tech and automation.</p>
-            <p>With years of experience, our team helps small businesses leverage cutting-edge tools to streamline operations and drive growth. From email management to AI-powered automation, we handle the tech so you can focus on what matters most.</p>
-            <a href="#contact" class="cta-button">Contact Us</a>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq">
-        <div class="container">
-            <h2>Frequently Asked Questions</h2>
-            <p class="section-intro">Find answers to common queries about our services.</p>
-            <div class="faq-accordion">
-                <div class="faq-item">
-                    <button class="faq-question">What services do you offer?</button>
-                    <div class="faq-answer">
-                        <p>We specialize in email setup, CRM integration, AI tools, and workflow automation for small businesses.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">How do I get started?</button>
-                    <div class="faq-answer">
-                        <p>Book a free consultation through our Calendly link, and we'll discuss your needs.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">What is the pricing structure?</button>
-                    <div class="faq-answer">
-                        <p>Our plans start from $500 for 10 hours, with options for more comprehensive packages or custom solutions.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Do you offer ongoing support?</button>
-                    <div class="faq-answer">
-                        <p>Yes, all plans include priority support, and we offer maintenance packages for continued assistance.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p class="section-intro">Ready to automate your business? Get in touch today.</p>
-            <form action="https://formspree.io/f/your-form-id" method="POST" id="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit" class="cta-button">Send Message</button>
+    <section id="hero">
+        <h1>Real People & AI Superpowering Your Conversations</h1>
+        <p>24/7 professional support for businesses, blending human empathy with AI efficiency for seamless customer experiences.</p>
+        <div class="hero-form">
+            <form id="trial-form">
+                <select name="employeeCount" aria-label="Number of employees" required>
+                    <option value="">How many employees?</option>
+                    <option value="1-10">1-10</option>
+                    <option value="11-50">11-50</option>
+                    <option value="51+">51+</option>
+                </select>
+                <button type="submit">Try MaxAssist Free</button>
             </form>
-            <p id="form-message" style="display: none; color: #4a90e2;"></p>
-            <p class="contact-info">Email: <a href="mailto:info@maxitassist.com">info@maxitassist.com</a></p>
-            <p class="contact-info">Phone: (123) 456-7890</p>
-            <div class="social-links">
-                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://x.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+        <div style="margin-top: 30px;">
+            <a href="#telephone" class="cta-button" style="margin-right: 15px;">Telephone Answering</a>
+            <a href="#ai-voice" class="cta-button">AI Voice Agent</a>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>More Than an Answering Service</h2>
+        <div class="service-cards">
+            <div class="card">
+                <i class="fas fa-phone-alt fa-2x"></i>
+                <h3>Telephone Answering</h3>
+                <p>Real people handling calls as if based in your business.</p>
+                <ul>
+                    <li>Dedicated PA</li>
+                    <li>Tailored instructions</li>
+                    <li>Diary integration</li>
+                </ul>
+                <a href="/telephone-answering-service" class="cta-button">Learn More</a>
+            </div>
+            <div class="card">
+                <i class="fas fa-robot fa-2x"></i>
+                <h3>AI Voice Agent</h3>
+                <p>Ultra-realistic AI with human escalation options.</p>
+                <ul>
+                    <li>Emotional intelligence</li>
+                    <li>Fast responses</li>
+                    <li>Pre-agreed flows</li>
+                </ul>
+                <a href="/ai-voice-agent" class="cta-button">Learn More</a>
+            </div>
+            <div class="card">
+                <i class="fas fa-headset fa-2x"></i>
+                <h3>Outsourced Switchboard</h3>
+                <p>Scalable 24/7 receptionist resource for all call volumes.</p>
+                <ul>
+                    <li>Overflow/full outsourcing</li>
+                    <li>Instant scalability</li>
+                    <li>Call transfers</li>
+                </ul>
+                <a href="/outsourced-switchboard" class="cta-button">Learn More</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Max It Assist. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="#privacy">Privacy Policy</a>
-                <a href="#terms">Terms of Service</a>
+    <section id="capabilities">
+        <h2>Jobs We Take Care Of</h2>
+        <ul class="capabilities">
+            <li>Answering/transferring calls</li>
+            <li>Forwarding messages</li>
+            <li>Qualifying enquiries</li>
+            <li>Taking payments</li>
+            <li>Managing appointments</li>
+            <li>CRM updates</li>
+            <li>24/7 representation</li>
+            <li>Handling FAQs</li>
+        </ul>
+    </section>
+
+    <section id="credibility">
+        <h2>The #1 Provider Now and Always</h2>
+        <p>We're the original disruptor with a passion for small businesses.</p>
+        <div class="carousel">
+            <div class="carousel-slide active">
+                <img src="https://via.placeholder.com/800x400?text=Company+Culture" alt="Company Culture">
             </div>
+            <div class="carousel-slide">
+                <img src="https://via.placeholder.com/800x400?text=AI+Integration" alt="AI Integration">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://via.placeholder.com/800x400?text=Team+Quality" alt="Team Quality">
+            </div>
+            <div class="carousel-slide">
+                <img src="https://via.placeholder.com/800x400?text=AI+Role+in+Business" alt="AI Role in Business">
+            </div>
+            <div class="carousel-controls">
+                <button onclick="prevSlide()">&#8249;</button>
+                <button onclick="nextSlide()">&#8250;</button>
+            </div>
+        </div>
+        <div class="stats">
+            <div class="stat">
+                <h4>25</h4>
+                <p>Years in Business</p>
+            </div>
+            <div class="stat">
+                <h4>1,000</h4>
+                <p>Team Members</p>
+            </div>
+            <div class="stat">
+                <h4>20M</h4>
+                <p>Calls/Chats Handled</p>
+            </div>
+            <div class="stat">
+                <h4>#1</h4>
+                <p>Trusted Partner</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ai-focus">
+        <h2>The Role of AI Across Our Business</h2>
+        <p>Our hybrid model leverages AI for routine tasks and humans for complex interactions.</p>
+        <ul>
+            <li>AI Voice Agent for instant responses</li>
+            <li>KnowledgeBase for quick info surfacing</li>
+            <li>MessageMaker for concise summaries</li>
+        </ul>
+        <p>Real People + AI for seamless 24/7 experiences, accessible to all business sizes.</p>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>With 25 years of global reach and a UK focus, our 1,000 team members handle 20M calls/chats annually.</p>
+        <a href="#trial" class="cta-button">Get Started</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 MaxAssist. All rights reserved.</p>
+        <div>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms of Service</a>
+        </div>
+        <div>
+            <a href="https://linkedin.com" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://twitter.com" aria-label="Twitter">Twitter</a>
+            <a href="https://facebook.com" aria-label="Facebook">Facebook</a>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function toggleMenu() {
+            document.querySelector('nav ul').classList.toggle('show');
+        }
+
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        if (slides.length > 0) {
+            function showSlide(index) {
+                slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+            }
+            window.nextSlide = () => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            };
+            window.prevSlide = () => {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                showSlide(currentSlide);
+            };
+            setInterval(nextSlide, 5000);
+        }
+
+        // Form submission
+        document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('trial-form');
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const employeeCount = formData.get('employeeCount');
+            console.log('Submitting:', { employeeCount });
+            try {
+                const response = await fetch('/netlify/functions/trial', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ employeeCount })
+                });
+                const result = await response.json();
+                console.log('Response:', result);
+                alert(result.message);
+                form.reset();
+            } catch (error) {
+                console.error('Form submission error:', error);
+                alert('Error submitting form. Please try again.');
+            }
+        });
+    } else {
+        console.error('Form not found');
+    }
+});
+    </script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/YOUR_PROPERTY_ID/default';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
 </body>
 </html>

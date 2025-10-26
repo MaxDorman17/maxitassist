@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"> <!-- For icons -->
 </head>
 <body>
     <!-- Navigation -->
@@ -33,11 +34,23 @@
 
     <!-- Home Section -->
     <section id="home">
-        <div class="hero">
-            <h1>Max It Assist: Power Up Your Business</h1>
-            <p>Tech and automation virtual assistants to streamline your email, CRM, and AI tools.</p>
-            <a href="https://calendly.com/your-username/free-tech-audit" target="_blank" class="cta-button">Book a Free Tech Audit</a>
+        <div class="hero-content">
+            <h1 class="hero-title">Max It Assist</h1>
+            <p class="hero-subtitle">Empowering Small Businesses with Cutting-Edge Automation</p>
+            <div class="hero-cta">
+                <a href="https://calendly.com/your-username/free-tech-audit" target="_blank" class="cta-button">Book a Free Audit <i class="fas fa-arrow-right"></i></a>
+                <a href="#services" class="cta-secondary">Explore Services</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item"><span>15+</span> Years Experience</div>
+                <div class="stat-item"><span>100+</span> Happy Clients</div>
+                <div class="stat-item"><span>10h</span> Weekly Savings</div>
+            </div>
         </div>
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="https://via.placeholder.com/1920x1080.mp4?text=Tech+Animation" type="video/mp4">
+            <img src="hero-bg.jpg" alt="Hero Background" class="hero-fallback">
+        </video>
     </section>
 
     <!-- Services Section -->

@@ -7,13 +7,23 @@ burger.addEventListener('click', () => {
     burger.classList.toggle('toggle');
 });
 
+// Video fallback for unsupported browsers
+const video = document.querySelector('.hero-video');
+const fallback = document.querySelector('.hero-fallback');
+if (video && fallback) {
+    video.addEventListener('error', () => {
+        video.style.display = 'none';
+        fallback.style.display = 'block';
+    });
+}
+
 // Form submission feedback
 const form = document.getElementById('contact-form');
 const formMessage = document.getElementById('form-message');
 
 if (form && formMessage) {
     form.addEventListener('submit', async (e) => {
-        e.preventDefault(); // Prevent default to handle via JS
+        e.preventDefault();
         const formData = new FormData(form);
         try {
             const response = await fetch(form.action, {
